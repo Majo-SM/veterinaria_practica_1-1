@@ -3,7 +3,7 @@ const Cliente = require('./cliente.controller');
 
 const router = Router();
 
-router.get('/cliente', Cliente.getClientes)
+router.get('/clientes', Cliente.getClientes)
 
 
 module.exports = router

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import { Compra } from '../interfaces/Compra'
+import { Compra } from '../interfaces'
+import { URL_API } from "../constants/constantes"
 
 export function TablaCompra() {
-    const url = 'http:localhost:80'
     const [compra, setCompra] = useState<Compra[]>([{ 
         id_veterinaria: '',
         id_producto: '',
@@ -11,14 +11,14 @@ export function TablaCompra() {
 
     }])
 
-    const getCompra = async () => {
-        const response = await fetch(`${url}/compra`)
+    const getCompras = async () => {
+        const response = await fetch(`${URL_API}/compras`)
         const data = await response.json()
         return data as Compra[]
     }
 
     useEffect(() => {
-        getCompra().then( data => {
+        getCompras().then( data => {
             setCompra(data)
         })
     }, [])
@@ -36,11 +36,10 @@ export function TablaCompra() {
                 {compra.map((compra) => {
                     return (
                         <tr key={compra?._id}>
-                            <td>compra.veterinaria</td>
-                            <td>compra.producto</td>
-                            <td>compra.proveedor</td>
-                            <td>compra.fecha_compra</td>
-                            <td>compra.telefono</td>
+                            <td>{compra.id_veterinaria}</td>
+                            <td>{compra.id_producto}</td>
+                            <td>{compra.id_proveedor}</td>
+                            <td>{compra.fecha_compra}</td>
                         </tr>
                     )
                 })}

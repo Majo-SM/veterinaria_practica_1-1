@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Cliente } from '../interfaces/Cliente'
+import { Cliente } from '../interfaces'
+import { URL_API } from '../constants/constantes'
 
 
 export function TablaClientes(){
-    const url = 'http:localhost:80'
     const [clientes, setClientes] = useState<Cliente[]>([{
         nombre: '',
         apellido: '',
@@ -18,7 +18,7 @@ export function TablaClientes(){
     }])
     
     const getClientes = async () => {
-        const response = await fetch(`${url}/clientes`)
+        const response = await fetch(`${URL_API}/clientes`)
         const data = await response.json()
         return data as Cliente[]
     }
@@ -45,13 +45,13 @@ export function TablaClientes(){
                 {clientes.map((cliente) => {
                     return (
                         <tr key={cliente?._id}>
-                            <td>cliente.nombre</td>
-                            <td>cliente.apelido</td>
-                            <td>cliente.genero</td>
-                            <td>cliente.direccion</td>
-                            <td>cliente.telefono</td>
-                            <td>cliente.ci</td>
-                            <td>cliente.num_mascotas</td>
+                            <td>{cliente.nombre}</td>
+                            <td>{cliente.apellido}</td>
+                            <td>{cliente.genero}</td>
+                            <td>{cliente.direccion}</td>
+                            <td>{cliente.telefono}</td>
+                            <td>{cliente.ci}</td>
+                            <td>{cliente.num_mascotas}</td>
                         </tr>
                     )
                 })}
