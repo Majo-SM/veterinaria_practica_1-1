@@ -1,8 +1,12 @@
+import { Navbar } from "../componentes/Navbar/Navbar";
 
 export function HomePage() {
     return(
-        <main>
-            pagina de inicio
-        </main>
+        <>
+            <Navbar />
+            <main>
+                pagina de inicio
+            </main>
+        </>
     )
 }

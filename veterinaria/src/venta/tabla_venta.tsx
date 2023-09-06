@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Venta } from '../interfaces'
 import { URL_API } from '../constants/constantes'
+import { Navbar } from '../componentes/Navbar/Navbar'
 
 
-export function TablaClientes(){
+export function TablaVentas(){
     const [ventas, setVentas] = useState<Venta[]>([{
         id_veterinaria: '',
         id_cliente: '',
@@ -27,14 +28,15 @@ export function TablaClientes(){
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
                 <thead>
-                    <td>Veterinaria</td>
-                    <td>Cliente</td>
-                    <td>Producto</td>
-                    <td>Venta Detalle</td>
-                    <td>Fecha Venta</td>
-                    <td>Descripcion</td>
+                    <th>Veterinaria</th>
+                    <th>Cliente</th>
+                    <th>Producto</th>
+                    <th>Venta Detalle</th>
+                    <th>Fecha Venta</th>
+                    <th>Descripcion</th>
                 </thead>
                 <tbody>
                 {ventas.map((cliente) => {

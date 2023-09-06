@@ -1,3 +1,4 @@
+export * from './Cita';
 export * from './Cliente';
 export * from './Compra';
 export * from './Mascota';

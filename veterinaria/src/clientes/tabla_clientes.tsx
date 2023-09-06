@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Cliente } from '../interfaces'
 import { URL_API } from '../constants/constantes'
+import { Navbar } from '../componentes/Navbar/Navbar'
 
 
 export function TablaClientes(){
@@ -31,15 +32,16 @@ export function TablaClientes(){
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
                 <thead>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>Genero</td>
-                    <td>Direccion</td>
-                    <td>Telefono</td>
-                    <td>Cedula</td>
-                    <td>N° Mascotas</td>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Genero</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Cedula</th>
+                    <th>N° Mascotas</th>
                 </thead>
                 <tbody>
                 {clientes.map((cliente) => {

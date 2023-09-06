@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Mascota } from '../interfaces'
 import { URL_API } from '../constants/constantes'
+import { Navbar } from '../componentes/Navbar/Navbar'
 
 
-export function TablaClientes(){
+export function TablaMascotas(){
     const [mascotas, setMascotas] = useState<Mascota[]>([{
         id_cliente: '',
         id_tipo_mascota: '',
@@ -29,16 +30,17 @@ export function TablaClientes(){
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
                 <thead>
-                    <td>Cliente</td>
-                    <td>Tipo Mascota</td>
-                    <td>habito</td>
-                    <td>Nombre Mascota</td>
-                    <td>Fecha Nacimiento</td>
-                    <td>Genero</td>
-                    <td>Color</td>
-                    <td>Esterilizacion</td>
+                    <th>Cliente</th>
+                    <th>Tipo Mascota</th>
+                    <th>habito</th>
+                    <th>Nombre Mascota</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Genero</th>
+                    <th>Color</th>
+                    <th>Esterilizacion</th>
                 </thead>
                 <tbody>
                 {mascotas.map((mascota) => {

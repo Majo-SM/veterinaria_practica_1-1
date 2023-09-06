@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Vacuna } from '../interfaces'
 import { URL_API } from '../constants/constantes'
+import { Navbar } from '../componentes/Navbar/Navbar'
 
 
-export function TablaClientes(){
+export function TablaVacunas(){
     const [vacunas, setVacunas] = useState<Vacuna[]>([{
         id_mascota: '',
         id_veterinario: '',
@@ -26,13 +27,14 @@ export function TablaClientes(){
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
                 <thead>
-                    <td>Mascota</td>
-                    <td>Veterinario</td>
-                    <td>Producto</td>
-                    <td>Fecha Aplicacion</td>
-                    <td>Dosis</td>
+                    <th>Mascota</th>
+                    <th>Veterinario</th>
+                    <th>Producto</th>
+                    <th>Fecha Aplicacion</th>
+                    <th>Dosis</th>
                 </thead>
                 <tbody>
                 {vacunas.map((vacuna) => {

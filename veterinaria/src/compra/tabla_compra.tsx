@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Compra } from '../interfaces'
 import { URL_API } from "../constants/constantes"
+import { Navbar } from "../componentes/Navbar/Navbar"
 
 export function TablaCompra() {
     const [compra, setCompra] = useState<Compra[]>([{ 
@@ -25,12 +26,13 @@ export function TablaCompra() {
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
             <thead>
-                    <td>Veterinario</td>
-                    <td>Producto</td>
-                    <td>Proveedor</td>
-                    <td>Fecha Compra</td>
+                    <th>Veterinario</th>
+                    <th>Producto</th>
+                    <th>Proveedor</th>
+                    <th>Fecha Compra</th>
                 </thead>
                 <tbody>
                 {compra.map((compra) => {

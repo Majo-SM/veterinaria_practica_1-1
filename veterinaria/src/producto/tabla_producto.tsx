@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Producto } from '../interfaces'
 import { URL_API } from '../constants/constantes'
+import { Navbar } from '../componentes/Navbar/Navbar'
 
 
-export function TablaClientes(){
+export function TablaProductos(){
     const [productos, setProductos] = useState<Producto[]>([{
         nombre: '',
         id_tipo_producto: '',
@@ -23,10 +24,11 @@ export function TablaClientes(){
 
     return(
         <>
-            <table>
+            <Navbar />
+            <table className="table">
                 <thead>
-                    <td>Nombres</td>
-                    <td>Tipo Producto</td>
+                    <th>Nombres</th>
+                    <th>Tipo Producto</th>
                 </thead>
                 <tbody>
                 {productos.map((producto) => {
