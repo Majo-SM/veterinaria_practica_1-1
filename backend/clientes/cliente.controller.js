@@ -5,7 +5,9 @@ const getClientes = async (req, res) => {
     try {
         const clientes = await dbConnection('clientes')
         const data = await clientes.find({})
-        res.json(data);
+        // console.log(data)
+        const datas = await data.toArray()
+        res.json(datas);
     } catch (error) {
         console.error('Read error:', error);
         res.status(500).send('Error reading data');
