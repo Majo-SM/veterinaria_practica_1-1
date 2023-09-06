@@ -3,7 +3,7 @@ const Venta = require('./venta.controller');
 
 const router = Router();
 
-router.get('/cliente', Venta.getVentas)
+router.get('/ventas', Venta.getVentas)
 
 
 module.exports = router

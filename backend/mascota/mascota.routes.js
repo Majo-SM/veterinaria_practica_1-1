@@ -3,7 +3,7 @@ const Mascota = require('./mascota.controller');
 
 const router = Router();
 
-router.get('/cliente', Mascota.getMascotas)
+router.get('/mascotas', Mascota.getMascotas)
 
 
 module.exports = router

@@ -5,7 +5,8 @@ const getVacunas = async (req, res) => {
     try {
         const vacunas = await dbConnection('vacunas')
         const data = await vacunas.find({})
-        res.json(data);
+        const datas = await data.toArray()
+        res.json(datas);
     } catch (error) {
         console.error('Read error:', error);
         res.status(500).send('Error reading data');

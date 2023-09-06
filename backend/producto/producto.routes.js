@@ -3,7 +3,7 @@ const Producto = require('./producto.controller');
 
 const router = Router();
 
-router.get('/cliente', Producto.getProductos)
+router.get('/productos', Producto.getProductos)
 
 
 module.exports = router

@@ -2,12 +2,12 @@ FROM node
 
 WORKDIR /app/src
 
-COPY package.json .
+COPY ./package.json .
 
-RUN npm install
+RUN npm install --force
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5173
 
 CMD [ "npm", "run", "dev" ]

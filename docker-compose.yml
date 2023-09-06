@@ -34,7 +34,7 @@ services:
   frontend:
     build: ./veterinaria
     ports:
-      - '5173:3000'
+      - '5173:5173'
     volumes:
       - ./veterinaria:/app/src
     stdin_open: true

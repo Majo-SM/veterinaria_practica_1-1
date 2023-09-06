@@ -3,7 +3,7 @@ const Veterinario = require('./veterinario.controller');
 
 const router = Router();
 
-router.get('/cliente', Veterinario.getVeterinarios)
+router.get('/veterinarios', Veterinario.getVeterinarios)
 
 
 module.exports = router
