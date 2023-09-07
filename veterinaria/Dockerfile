@@ -1,10 +1,10 @@
-FROM node
+FROM node:18.16.1
 
 WORKDIR /app/src
 
-COPY ./package.json .
+COPY package.json .
 
-RUN npm install --force
+RUN npm install
 
 COPY . .
 

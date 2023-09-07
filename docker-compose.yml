@@ -5,7 +5,7 @@ services:
     ports:
       - '9000:27017'
     volumes:
-      - ./datos:/data/db
+      - /data/db
     restart: always
     command: --quiet --logpath /dev/null
     # environment:
@@ -14,6 +14,8 @@ services:
     # - MONGO_INITDB_ROOT_USERNAME=max
     # env_file:
     #   - ./env/mongo.env
+    stdin_open: true
+    tty: true
   backend:
     build: ./backend
     # build:
@@ -31,12 +33,12 @@ services:
       - /app/node_modules
     depends_on:
       - mongodb
+    stdin_open: true
+    tty: true
   frontend:
     build: ./veterinaria
     ports:
       - '5173:5173'
-    volumes:
-      - ./veterinaria:/app/src
     stdin_open: true
     tty: true
     depends_on:

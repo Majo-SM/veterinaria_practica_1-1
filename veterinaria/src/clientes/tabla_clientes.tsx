@@ -19,8 +19,12 @@ export function TablaClientes(){
     }])
     
     const getClientes = async () => {
-        const response = await fetch(`${URL_API}/clientes`)
+        const response = await fetch(`${URL_API}/clientes`,  { headers: {
+            "Content-Type": "application/json",
+          }},)
+        console.log(response)
         const data = await response.json()
+        console.log(data)
         return data as Cliente[]
     }
 
@@ -35,13 +39,15 @@ export function TablaClientes(){
             <Navbar />
             <table className="table">
                 <thead>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Genero</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>Cedula</th>
-                    <th>N° Mascotas</th>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Genero</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Cedula</th>
+                        <th>N° Mascotas</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {clientes.map((cliente) => {
