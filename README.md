@@ -28,3 +28,4 @@
 
 * ![image](https://github.com/NahomiMachuca/ISP/assets/89893604/ec9403be-1e53-4249-bcb1-3662aa670b13)
 
+* Presentación de resutados 
